@@ -1,4 +1,8 @@
 ![LOGO](http://white.oneplus.xin/img/Van.png)
+[![AstrBot](https://img.shields.io/badge/AstrBot-Plugin-purple?style=flat-square)](https://github.com/Soulter/AstrBot)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
+[![Version](https://img.shields.io/badge/Version-1.0.0-orange?style=flat-square)]()
 # **Van词库** 
 *~~适配NoneBot的Python词库~~*<br/><br/>
 **适配*AstrBot*的Python词库**<br/>
