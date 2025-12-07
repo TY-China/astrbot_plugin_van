@@ -1,3 +1,4 @@
+![LOGO](res/iogos.png)
 # **Van词库** 
 *~~适配NoneBot的Python词库~~*<br/><br/>
 **适配*AstrBot*的Python词库**<br/>

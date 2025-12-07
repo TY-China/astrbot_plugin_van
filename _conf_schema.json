@@ -9,19 +9,19 @@
     "description": "是否允许群管理员触发管理指令",
     "type": "bool",
     "default": false,
-    "hint": "开启后群管理员也能使用管理指令"
+    "hint": "开启后群管理员也能使用管理指令（需要配合平台权限）"
   },
   "webui_target_url": {
     "description": "WebUI API地址",
     "type": "string",
     "default": "http://bot.ziyi.site/new/path/",
-    "hint": "用于远程管理词库"
+    "hint": "用于远程管理词库（可选功能）"
   },
   "webui_check_interval": {
     "description": "WebUI检测间隔(秒)",
     "type": "int",
     "default": 5,
-    "hint": "检测远程词库变化的间隔时间"
+    "hint": "检测远程词库变化的间隔时间，设为0禁用"
   },
   "ignore_group_ids": {
     "description": "忽略的群号",
@@ -39,12 +39,73 @@
     "description": "管理员QQ列表",
     "type": "text",
     "default": "",
-    "hint": "每行一个QQ号，拥有管理权限"
+    "hint": "每行一个QQ号，拥有管理权限（可执行管理指令）"
   },
-  "data_directory": {
-    "description": "数据存储目录",
+  "private_message_enable": {
+    "description": "是否启用私聊功能",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后将不处理私聊消息"
+  },
+  "group_message_enable": {
+    "description": "是否启用群聊功能",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后将不处理群聊消息"
+  },
+  "keyword_cooldown": {
+    "description": "全局关键词冷却时间(秒)",
+    "type": "int",
+    "default": 0,
+    "hint": "全局冷却时间，0表示禁用，>0时所有关键词触发后都会有冷却"
+  },
+  "max_response_length": {
+    "description": "最大回复长度",
+    "type": "int",
+    "default": 1000,
+    "hint": "单次回复的最大字符数，防止过长消息"
+  },
+  "wildcard_enable": {
+    "description": "是否启用通配符功能",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后将不处理 [n.x] 通配符匹配"
+  },
+  "math_eval_enable": {
+    "description": "是否启用数学表达式",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后将不处理 (+1+2*3) 等数学表达式"
+  },
+  "log_level": {
+    "description": "日志级别",
     "type": "string",
-    "default": "data/keyword_astrbot",
-    "hint": "词库、配置等数据存储的位置"
+    "default": "INFO",
+    "options": ["DEBUG", "INFO", "WARNING", "ERROR"],
+    "hint": "控制插件日志的详细程度"
+  },
+  "auto_backup": {
+    "description": "自动备份",
+    "type": "bool",
+    "default": false,
+    "hint": "每次修改词库后自动备份"
+  },
+  "backup_keep_days": {
+    "description": "备份保留天数",
+    "type": "int",
+    "default": 7,
+    "hint": "自动备份文件的保留天数，0表示永久保留"
+  },
+  "default_lexicon": {
+    "description": "默认词库名称",
+    "type": "string",
+    "default": "default",
+    "hint": "当没有匹配到其他词库时使用的默认词库"
+  },
+  "response_timeout": {
+    "description": "响应超时时间(秒)",
+    "type": "int",
+    "default": 30,
+    "hint": "处理响应的最大时间，超时则取消发送"
   }
 }
